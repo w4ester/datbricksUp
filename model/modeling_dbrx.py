@@ -484,9 +484,9 @@ class DbrxFlashAttention2(DbrxAttention):
                 target_dtype = query_states.dtype
 
             logger.warning_once(
-                f'The input hidden states seems to be silently casted in float32, this might be '
+                'The input hidden states seems to be silently casted in float32, this might be '
                 +
-                f'related to the fact you have upcasted embedding or layer norm layers in '
+                'related to the fact you have upcasted embedding or layer norm layers in '
                 + f'float32. We will cast back the input in {target_dtype}.')
 
             query_states = query_states.to(target_dtype)

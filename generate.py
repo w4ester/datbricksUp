@@ -73,7 +73,7 @@ def _generate(encoded_inp: Dict[str, torch.Tensor]):
                 **generate_kwargs,
             )
 
-print(f'\nTokenizing prompts...')
+print('\nTokenizing prompts...')
 tokenized_chat = tokenizer.apply_chat_template(
     MESSAGES,
     tokenize=True,
