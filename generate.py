@@ -1,9 +1,9 @@
 from typing import Dict
 
 import torch
-import random
 import contextlib
 from transformers import AutoTokenizer, AutoModelForCausalLM
+import secrets
 
 HF_REPO_NAME = 'databricks/dbrx-instruct'
 TOKEN = True  # Necessary to verify that the user has accepted the license for the model
@@ -47,7 +47,7 @@ model = AutoModelForCausalLM.from_pretrained(
 
 
 # Seed randomness
-random.seed(SEED)
+secrets.SystemRandom().seed(SEED)
 torch.manual_seed(SEED)
 print(f'\nGenerate seed:\n{SEED}')
 
